@@ -1,26 +1,14 @@
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": "app.py",  
-      "use": "@vercel/python"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/heatmap",
-      "dest": "app.py"
-    },
-    {
-      "src": "/predict_aqi",
-      "dest": "app.py"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "app.py"
-    }
-  ],
-  "env": {
-    "FLASK_ENV": "production"
-  }
-}
+ {
+     "builds": [
+         {
+             "src": "api/hello.py",
+             "use": "@vercel/python"
+         }
+     ],
+     "routes": [
+         {
+             "src": "/(.*)",
+             "dest": "api/hello.py"
+         }
+     ]
+ }
