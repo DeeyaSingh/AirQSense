@@ -1,3 +1,3 @@
 [build]
-  command = "pip install -r your_requirements.txt -t ./functions && npm install"
+  command = "pip install -r requirements.txt -t ./functions && npm install"
   functions = "functions"
