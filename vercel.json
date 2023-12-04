@@ -1,14 +1,26 @@
- {
-     "builds": [
-         {
-             "src": "app.py",
-             "use": "@vercel/python"
-         }
-     ],
-     "routes": [
-         {
-             "src": "/(.*)",
-             "dest": "api/hello.py"
-         }
-     ]
- }
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.py",  // Adjust this to the main file of your Flask app
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/heatmap",
+      "dest": "app.py"
+    },
+    {
+      "src": "/predict_aqi",
+      "dest": "app.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "app.py"
+    }
+  ],
+  "env": {
+    "FLASK_ENV": "production"
+  }
+}
