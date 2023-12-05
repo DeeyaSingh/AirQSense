@@ -286,6 +286,9 @@ def get_heatmap():
     locations = [area_coords[location] for location in df['location']]
     aqi_values = df['pm25'].astype(float).values
     heatmap = create_aqi_heatmap(locations, aqi_values)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+
 
     return heatmap._repr_html_()
 
